@@ -145,7 +145,9 @@ function jardinactivo_scripts() {
 
 	wp_style_add_data( 'jardinactivo-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'jardinactivo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'jardinactivo-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(),'5.1.1', true );
+
+//	wp_enqueue_script( 'jardinactivo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
