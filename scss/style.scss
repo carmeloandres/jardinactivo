@@ -40,9 +40,9 @@
 @import "modal";
 @import "tooltip";
 @import "popover";
-@import "carousel";
-@import "spinners";
-@import "offcanvas";
+//@import "carousel";
+//@import "spinners";
+//@import "offcanvas";
 
 // Helpers
 @import "helpers";
@@ -50,3 +50,8 @@
 // Utilities
 @import "utilities/api";
 // scss-docs-end import-stack
+
+ul .ja-menu li a {
+    color: #127b9B;
+    background-color: #ffffff;
+}

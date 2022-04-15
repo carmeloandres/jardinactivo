@@ -46,10 +46,13 @@ function jardinactivo_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	// Includes the nav menu walker bootstrap 5 file
+	include_once ('inc/class-bootstrap-5-nav-menu-walker.php');
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'jardinactivo' ),
+			'main-menu' => esc_html__( 'Main menu', 'jardinactivo' ),
 		)
 	);
 
@@ -138,7 +141,7 @@ add_action( 'widgets_init', 'jardinactivo_widgets_init' );
  * Enqueue scripts and styles.
  */
 function jardinactivo_scripts() {
-	wp_enqueue_style( 'jardinactivo-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'jardinactivo-style',  get_template_directory_uri() . '/assets/css/style.min.css', array(), _S_VERSION );
 
 	wp_style_add_data( 'jardinactivo-style', 'rtl', 'replace' );
 
