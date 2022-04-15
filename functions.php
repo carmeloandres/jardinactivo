@@ -186,3 +186,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Filter to add new clases to custom logo
+ */
+if (!defined('jardinactivo_change_logo_class')){
+	function gsmtc_change_logo_class ($html){
+//		$html = str_replace( 'custom-logo', 'your-custom-class', $html );
+    	$html = str_replace( 'custom-logo-link', 'navbar-brand', $html );
+		
+    	return $html;
+	}
+	add_filter( 'get_custom_logo', 'gsmtc_change_logo_class' );	
+}
