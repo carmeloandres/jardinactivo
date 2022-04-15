@@ -226,12 +226,13 @@ padding-right: $navbar-padding-x; // default: null
   .navbar-nav {
     .nav-link {
       color: $white;
-      background-color: $green;
-      margin-left:2px;
-//      margin: auto;
+      background-color: $blue;
+//      background-color: $green;
+//      margin-left:2px;
+
+      margin: auto 1px;
       padding: auto;
       text-align: center;
-      width: 100%
 
       &:hover,
       &:focus {

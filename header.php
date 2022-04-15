@@ -25,12 +25,12 @@
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container  px-0">
+			<div class="container">
 				<?php the_custom_logo(); ?>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse text-primary" id="main-menu">
+				<div class="collapse navbar-collapse" id="main-menu">
 				<?php
 		            wp_nav_menu(array(
         		        'theme_location' => 'main-menu',
@@ -45,26 +45,4 @@
 				</div>
 		</div>
 		</nav>
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$jardinactivo_description = get_bloginfo( 'description', 'display' );
-			if ( $jardinactivo_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $jardinactivo_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'jardinactivo' ); ?></button>
-		</nav><!-- #site-navigation -->
-		<div class="text-primary">color primario</div>
 	</header><!-- #masthead -->
