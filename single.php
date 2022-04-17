@@ -9,7 +9,11 @@
 
 get_header();
 ?>
+<div id="content" class="container my-5 py-5">
+    <div class="row">
+        <div class="col-md-9">
 
+<p>is single</p>
 	<main id="primary" class="site-main">
 
 		<?php
@@ -34,7 +38,12 @@ get_header();
 		?>
 
 	</main><!-- #main -->
+	</div><!-- .col-md-9-->
+		<div class="col-md-3">
+			<?php get_sidebar(); ?>				
+		</div><!-- .col-md-3 -->
+	</div><!-- row -->
+</div><!-- #content -->
 
 <?php
-get_sidebar();
 get_footer();

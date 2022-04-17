@@ -134,6 +134,67 @@ function jardinactivo_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	
+			// Footer 1
+			register_sidebar(array(
+				'name' => esc_html__('Footer 1', 'jardinactivo' ),
+				'id' => 'footer-1',
+				'description' => esc_html__('Add widgets here.', 'jardinactivo' ),
+				'before_widget' => '<div class="footer_widget mb-4">',
+				'after_widget' => '</div>',
+				'before_title' => '<h2 class="widget-title h4">',
+				'after_title' => '</h2>'
+			));
+			// Footer 1 End
+	
+			// Footer 2
+			register_sidebar(array(
+				'name' => esc_html__('Footer 2', 'jardinactivo' ),
+				'id' => 'footer-2',
+				'description' => esc_html__('Add widgets here.', 'jardinactivo'),
+				'before_widget' => '<div class="footer_widget mb-4">',
+				'after_widget' => '</div>',
+				'before_title' => '<h2 class="widget-title h4">',
+				'after_title' => '</h2>'
+			));
+			// Footer 2 End
+	
+			// Footer 3
+			register_sidebar(array(
+				'name' => esc_html__('Footer 3', 'jardinactivo' ),
+				'id' => 'footer-3',
+				'description' => esc_html__('Add widgets here.', 'jardinactivo'),
+				'before_widget' => '<div class="footer_widget mb-4">',
+				'after_widget' => '</div>',
+				'before_title' => '<h2 class="widget-title h4">',
+				'after_title' => '</h2>'
+			));
+			// Footer 3 End
+	
+			// Footer 4
+			register_sidebar(array(
+				'name' => esc_html__('Footer 4', 'jardinactivo' ),
+				'id' => 'footer-4',
+				'description' => esc_html__('Add widgets here.', 'jardinactivo'),
+				'before_widget' => '<div class="footer_widget mb-4">',
+				'after_widget' => '</div>',
+				'before_title' => '<h2 class="widget-title h4">',
+				'after_title' => '</h2>'
+			));
+			// Footer 4 End
+
+			// Bottom Footer
+			register_sidebar(array(
+				'name' => esc_html__('Bottom Footer', 'jardinactivo' ),
+				'id' => 'bottom-footer',
+				'description' => esc_html__('Add widgets here.', 'jardinactivo' ),
+				'before_widget' => '<div class="footer_widget mb-5">',
+				'after_widget' => '</div>',
+				'before_title' => '<h2 class="widget-title">',
+				'after_title' => '</h2>'
+			));
+			// Bottom Footer End
+
 }
 add_action( 'widgets_init', 'jardinactivo_widgets_init' );
 
@@ -193,11 +254,11 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Filter to add new clases to custom logo
  */
 if (!defined('jardinactivo_change_logo_class')){
-	function gsmtc_change_logo_class ($html){
+	function jardinactivo_change_logo_class ($html){
 //		$html = str_replace( 'custom-logo', 'your-custom-class', $html );
     	$html = str_replace( 'custom-logo-link', 'navbar-brand', $html );
 		
     	return $html;
 	}
-	add_filter( 'get_custom_logo', 'gsmtc_change_logo_class' );	
+	add_filter( 'get_custom_logo', 'jardinactivo_change_logo_class' );	
 }

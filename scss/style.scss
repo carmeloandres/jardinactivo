@@ -37,7 +37,7 @@
 @import "list-group";
 @import "close";
 @import "toasts";
-@import "modal";
+//@import "modal";
 //@import "tooltip";
 //@import "popover";
 //@import "carousel";
@@ -51,7 +51,7 @@
 @import "utilities/api";
 // scss-docs-end import-stack
 
-ul .ja-menu li a {
-    color: #127b9B;
-    background-color: #ffffff;
+ul .navbar-nav {
+    background-color: #127b9b;
+    z-index: 5;
 }
