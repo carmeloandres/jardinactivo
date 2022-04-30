@@ -225,7 +225,7 @@ padding-right: $navbar-padding-x; // default: null
     }
   }
 
-  .navbar-nav {
+/*  .navbar-nav {
     .nav-link {
       color: $white;
       background-color: $blue;
@@ -240,14 +240,14 @@ padding-right: $navbar-padding-x; // default: null
       &:focus {
         color: $navbar-light-hover-color;
       } 
-
-/*  .navbar-nav {
+*/
+  .navbar-nav {
     .nav-link {
       color: $navbar-light-color;
       &:hover,
       &:focus {
         color: $navbar-light-hover-color;
-      } */
+      } 
     
       &.disabled {
         color: $navbar-light-disabled-color;
@@ -256,7 +256,8 @@ padding-right: $navbar-padding-x; // default: null
     
     .show > .nav-link,
     .nav-link.active {
-      color: $white;
+      //color: $purple;
+      color: $navbar-light-active-color;
     }
   }
 

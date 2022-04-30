@@ -12,8 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-	<div class="bg-dark">
-		<div class="container">
+		<div class="container bg-dark">
 			<div class="row">
 				<!-- Footer 1 Widget -->
 				<div class="col-md-6 col-lg-3">
@@ -50,30 +49,15 @@
 						</div>
 					<?php endif; ?>
 				</div>
-			</div>                        
+			</div><!-- row -->                        
             <!-- Bottom Footer Widget -->
             <?php if ( is_active_sidebar( 'bottom-footer' )) : ?>
-                <div class="text-center text-white pt-4">
+                <div>
                     <?php dynamic_sidebar( 'bottom footer' ); ?>
                 </div>
             <?php endif; ?>            
-			
 			<!-- Footer Widgets End -->
-		</div>
-	</div>
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jardinactivo' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'jardinactivo' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'jardinactivo' ), 'jardinactivo', '<a href="http://carmeloandes.com">Carmelo Andrés</a>' );
-				?>
-		</div><!-- .site-info -->
+		</div><!-- container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

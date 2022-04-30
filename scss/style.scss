@@ -22,7 +22,7 @@
 @import "tables";
 @import "forms";
 @import "buttons";
-@import "transitions";
+//@import "transitions";
 @import "dropdown";
 @import "button-group";
 @import "nav";
@@ -32,11 +32,11 @@
 @import "breadcrumb";
 @import "pagination";
 @import "badge";
-@import "alert";
-@import "progress";
-@import "list-group";
-@import "close";
-@import "toasts";
+//@import "alert";
+//@import "progress";
+//@import "list-group";
+//@import "close";
+//@import "toasts";
 //@import "modal";
 //@import "tooltip";
 //@import "popover";
@@ -50,8 +50,3 @@
 // Utilities
 @import "utilities/api";
 // scss-docs-end import-stack
-
-ul .navbar-nav {
-    background-color: #127b9b;
-    z-index: 5;
-}
