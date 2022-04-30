@@ -22,7 +22,7 @@
 @import "tables";
 @import "forms";
 @import "buttons";
-//@import "transitions";
+@import "transitions"; // is necesary for the navbar transitions
 @import "dropdown";
 @import "button-group";
 @import "nav";
@@ -31,7 +31,7 @@
 @import "accordion";
 @import "breadcrumb";
 @import "pagination";
-@import "badge";
+//@import "badge";
 //@import "alert";
 //@import "progress";
 //@import "list-group";

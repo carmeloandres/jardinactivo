@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-<div id="content" class="container my-5 py-5">
+<div id="content" class="site-content container my-5 py-5">
     <div class="row">
         <div class="col-md-9">
 
