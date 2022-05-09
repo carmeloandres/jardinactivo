@@ -18,8 +18,12 @@
         				<li class="nav-item dropdown">
           					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">login</a>
 							<ul class="dropdown-menu m-0 p-2 bg-primary " aria-labelledby="navbarDropdown">
-            						<li class="p-1"><input class="form-control me-2" type="search" placeholder="Usuario" aria-label="Search"></li>
-            						<li class="p-1"><input class="form-control me-2" type="search" placeholder="Contraseña" aria-label="Search"></li>
-            						<li class="d-flex justify-content-center p-1"><button class="btn btn-outline-success bg-light" type="submit">Acceder</button></li>
+								<form id="jardinactivo-login-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+            						<li class="p-1"><input class="form-control me-2" type="text" placeholder="Usuario" aria-label="Search"></li>
+            						<li class="p-1"><input class="form-control me-2" type="password" placeholder="Contraseña" aria-label="Search"></li>
+            						<li class="d-flex justify-content-center p-1"><button class="btn  bg-info" type="submit">Acceder</button></li>
+									<li class="p-1"><a class="dropdown-item" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste la contraseña?</a></li>
+									<li class="p-1"><a class="dropdown-item" href="<?php echo wp_registration_url(); ?>">Registrarse</a></li>
+								</form>
 							</ul>
  		       			</li>
