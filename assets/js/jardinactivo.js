@@ -7,12 +7,11 @@ if(form_login_form != null){
     let button_login_form = document.getElementById('jardinactivo-button-login-form');
     button_login_form.addEventListener('click',function(e){
         let datos = new FormData(form_login_form);
-        let datosParse = new URLSearchParams(datos);
     
         fetch(jardinactivo.ajax_url,
             {
                 method: "POST",
-                body: datosParse
+                body: datos
             }
         )
         .then(() => {
@@ -30,12 +29,10 @@ if(log_out != null){
         let datos = new FormData();
             datos.append("action","jardinactivo_log_out");
 
-        let datosParse = new URLSearchParams(datos);
-    
         fetch(jardinactivo.ajax_url,
             {
                 method: "POST",
-                body: datosParse
+                body: datos
             }
         )
         .then(() => {
