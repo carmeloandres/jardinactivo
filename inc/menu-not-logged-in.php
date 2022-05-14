@@ -1,5 +1,5 @@
                         <li class="nav-item">
-          					<a class="nav-link" aria-current="page" href="#">Home</a>
+          					<a class="nav-link" aria-current="page" href="<?php echo home_url(); ?>">Home</a>
         				</li>
 				        <li class="nav-item">
           					<a class="nav-link" href="#">Link</a>
@@ -18,12 +18,13 @@
         				<li class="nav-item dropdown">
           					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">login</a>
 							<ul class="dropdown-menu m-0 p-2 bg-primary " aria-labelledby="navbarDropdown">
-								<form id="jardinactivo-login-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-            						<li class="p-1"><input class="form-control me-2" type="text" placeholder="Usuario" aria-label="Search"></li>
-            						<li class="p-1"><input class="form-control me-2" type="password" placeholder="Contraseña" aria-label="Search"></li>
-            						<li class="d-flex justify-content-center p-1"><button class="btn  bg-info" type="submit">Acceder</button></li>
+								<form id="jardinactivo-login-form"  action="#" method="post" >
+            						<li class="p-1"><input class="form-control me-2" type="text" name="usuario" placeholder="Usuario de prueba"></li>
+            						<li class="p-1"><input class="form-control me-2" type="password" name="contrasenya" placeholder="Contraseña"></li>
+            						<li class="d-flex justify-content-center p-1"><button id="jardinactivo-button-login-form"class="btn  bg-info" type="button">Acceder</button></li>
 									<li class="p-1"><a class="dropdown-item" href="<?php echo wp_lostpassword_url(); ?>">Olvidaste la contraseña?</a></li>
 									<li class="p-1"><a class="dropdown-item" href="<?php echo wp_registration_url(); ?>">Registrarse</a></li>
+									<input type="hidden" name="action" value="jardinactivo_login">
 								</form>
 							</ul>
  		       			</li>

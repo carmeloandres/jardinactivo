@@ -210,6 +210,12 @@ function jardinactivo_scripts() {
 
 	wp_enqueue_script( 'jardinactivo-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(),'5.1.1', true );
 
+	wp_enqueue_script( 'jardinactivo-js', get_template_directory_uri() . '/assets/js/jardinactivo.js', array(),_S_VERSION, true );
+
+	wp_localize_script( 'jardinactivo-js','jardinactivo',array(
+		"ajax_url" => admin_url('admin-ajax.php')
+		)
+	);
 
 //	wp_enqueue_script( 'jardinactivo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -240,13 +246,6 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
-/**
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
@@ -265,3 +264,45 @@ if (!defined('jardinactivo_change_logo_class')){
 	}
 	add_filter( 'get_custom_logo', 'jardinactivo_change_logo_class' );	
 }
+
+/**
+ * Use te ajax login
+ */
+	if (! defined('jardinactivo_login')){
+		function jardinactivo_login(){
+			error_log('Se ha accedido al login de jardinactivo');
+			error_log('Contenido del POST:'.PHP_EOL.var_export($_POST,true));
+
+			$datos = array(
+				"user_login" => $_POST["usuario"],
+				"user_password" => $_POST["contrasenya"],
+				"remember"  => true
+						
+			);
+
+			$user = wp_signon($datos); 
+			
+			error_log('Contenido del User:'.PHP_EOL.var_export($user->get_error_message(),true));
+			
+			return $user->get_error_message();
+		}
+	}
+	add_action( 'wp_ajax_jardinactivo_login', 'jardinactivo_login' );
+    add_action( 'wp_ajax_nopriv_jardinactivo_login', 'jardinactivo_login' );  
+
+/**
+ * Use te ajax log out
+ */
+if (! defined('jardinactivo_log_out')){
+	function jardinactivo_log_out(){
+		error_log('Se ha accedido al log_out de jardinactivo');
+
+		$user = wp_logout(); 
+		
+		error_log('Contenido del User:'.PHP_EOL.var_export($user->get_error_message(),true));
+		
+		return $user->get_error_message();
+	}
+}
+add_action( 'wp_ajax_jardinactivo_log_out', 'jardinactivo_log_out' );
+add_action( 'wp_ajax_nopriv_jardinactivo_log_out', 'jardinactivo_log_out' );  
