@@ -12,7 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="container bg-dark">
+		<div class="container bg-dark text-white pt-0 mt-0 pb-0">
 			<div class="row">
 				<!-- Footer 1 Widget -->
 				<div class="col-md-6 col-lg-3">
