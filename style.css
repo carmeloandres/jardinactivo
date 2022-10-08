@@ -1,20 +1,73 @@
-/*!
+/*
 Theme Name: jardinactivo
-Theme URI: http://underscores.me/
 Author: Carmelo Andrés
-Author URI: http://carmeloandes.com
-Description: Tema base para la aplicación web jardín activo
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
-License: GNU General Public License v2 or later
-License URI: LICENSE
+Author URI: https://carmeloandres.com
+Theme URI: https://gesimatica.com/jardinactivo
+Tags: full-site-editing, editor-style, block-styles, block-patterns
 Text Domain: jardinactivo
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Requires at least: 6.0
+Requires PHP: 7.4
+Tested up to: 6.0
+Version: 1.0.0
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
 
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-jardinactivo is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
+Use it to make something cool, have fun, and share what you've learned
+with others.
 */
+
+/* Styles intended only for the front.*/
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/*
+Sticky header is experimental, only use it on the front for screens above 782px width.
+*/
+@media screen and (min-width: 782px) {
+
+	.is-style-jardinactivo-sticky {
+		position: sticky;
+		top: 0;
+		z-index: 999;
+	}
+
+	/* Move the sticky position down to adjust for the WordPress admin bar */
+	.admin-bar .is-style-jardinactivo-sticky {
+		top: 32px;
+	}
+}
+
+/*
+ * Increase horizontal padding on smaller screens.
+ * Temporary solution to avoid text content
+ * running up to the edge of the browser window,
+ * making the text difficult to read.
+*/
+@media ( max-width: 1024px ) {
+
+	main > :not(.alignfull),
+	main .wp-block-query > :not(.alignfull),
+	main .entry-content > :not(.alignfull):not(ul):not(ol),
+	main .entry-content .wp-block-columns.alignfull p {
+		padding-left: var(--wp--custom--h-spacing);
+		padding-right: var(--wp--custom--h-spacing);
+	}
+}

@@ -1,39 +1,114 @@
 === jardinactivo ===
+Contributors: Carmelo Andrés
+Tested up to: 6.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Version: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Copyright: Carmelo Andrés
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+A full site editing theme. Advanced version.
 
-Requires at least: 4.5
-Tested up to: 5.4
-Requires PHP: 5.6
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+== Guide ==
 
-A starter theme called jardinactivo.
+=== Folder structure ===
 
-== Description ==
+- Assets. Images, JavaScript, and CSS files.
+- Inc. Filters, fonts, block variations, registered block styles.
+- Parts. HTML template parts.
+- Patterns. Block pattern examples.
+- Styles. Global style variations.
+- Templates. HTML block templates.
 
-Tema base para la aplicación web jardín activo
+functions.php -Used to enqueue styles and add theme support.
+index.php     -Required to activate the theme.
+style.css     -Required to activate the theme.
+theme.json    -Settings and default styles.
+license.txt   -GPL v2
+readme.txt    -Information about the theme.
+screenshot.png
 
-== Installation ==
+=== Tooling ===
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+You can install the tools by opening yor terminal in the themes root folder
+and entering the following commands:
+npm install
+composer install
 
-== Frequently Asked Questions ==
+==== CSS ====
 
-= Does this theme support any plugins? =
+This theme includes both human-readable and minified CSS inside the assets/css folder.
+For improved performance, the theme loads the minified CSS on the front and in the editor.
 
-jardinactivo includes support for WooCommerce and for Infinite Scroll in Jetpack.
+To make changes to the CSS:
+1) Edit the human readable CSS file (the .css file that does not end with .min.css)
+2) Minify the CSS by running the command: gulp
+
+To add additional block styles:
+1) Create a new CSS file inside the assets/css/blocks folder.
+Use the slug of the block as the file name: latest-comments.css
+2) Next, open functions.php and add the slug to the $styled_blocks array inside the setup function.
+3) Minify the CSS with the command: gulp
+
+To watch for changes, use the command: gulp watch
+
+To compare your code against the CSS coding standards, use the command: npm run lint:css
+
+==== PHP ====
+
+To compare your code against the PHP coding standards,
+use the command: composer standards:check
+
+For PHPStan analysis, use the command: composer analyze
+
+==== JavaScript ====
+
+To compare your code against the JavasCript coding standards,
+use the command: npm run lint:js
 
 == Changelog ==
+1.0.0 Initial release
 
-= 1.0 - May 12 2015 =
-* Initial release
+== Licence ==
+jardinactivo is distributed under the terms of the GNU GPL.
 
-== Credits ==
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
 
-* Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+== Resources used to build this theme ==
+
+* Lora (font)
+Copyright 2011 The Lora Project Authors
+License: SIL Open Font License, 1.1
+License URI: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+
+* Twenty Twenty-Two WordPress theme (C) WordPress.org
+License: GNU General Public License v2.0 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+* Q WordPress theme (C) Ari Stathopoulos
+License: GNU General Public License v2.0 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+* Underscores https://underscores.me/, (C) Automattic, Inc.
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+* Full site editing starter theme by Carolina Nymark
+https://fullsiteediting.com
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Images
+Images from pxhere.com. Public domain:
+https://pxhere.com/en/photo/927190 -woman with curly hair
+https://pxhere.com/en/photo/1049910 -woman with t-shirt
+https://pxhere.com/en/photo/1604358 -woman with headphones
